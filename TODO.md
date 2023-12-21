@@ -57,6 +57,7 @@ Welcome to the Optimization Theory project. Here are your tasks based on your re
 ### Tasks
 
 1. Shift detection and store the results.
+2. Plan for stage 1.1.
 
 ### Deadline
 
