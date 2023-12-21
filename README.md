@@ -1,8 +1,6 @@
 # Optimization Theory
 
-> This is the repository for the course Optimization Theory.
-
-> We are now on the stage 1.0
+> We are now on stage 1.0
 
 > If you have any questions, please contact me.
 
@@ -12,8 +10,8 @@ The repository is structured as follows:
 
 - `docs` - the documentations
     - `stages` - Contains detailed information for each stage
-    - `abstract.md` - Abstract structure of our pape
-    - `pipeline.md` - Experiment Pipline
+    - `abstract.md` - Abstract structure of our paper
+    - `pipeline.md` - Experiment Pipeline
     - `refs.md` - Record of references
     - `results.md` - Experiment results
     - `roles.md` - Roles of everyone involved
