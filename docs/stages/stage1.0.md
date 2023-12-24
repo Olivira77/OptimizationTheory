@@ -112,6 +112,8 @@ reject_null_hypothesis = [p <= alpha_corr for p in p_values]
 
 ## Pipeline
 
+### Method 1
+
 1. Train a Deep Neural Network (Black Box Predictor) on the train data.
 2. Generate logits (output of the Neural Network) on train and test data.
 3. Generate predictions ($argmax(logits)$) on train ($p(\hat y)$) and test data ($q(\hat y)$).
@@ -123,5 +125,32 @@ reject_null_hypothesis = [p <= alpha_corr for p in p_values]
     ```
 
 5. Obtain the result whether $p(\hat y) \ne q(\hat y) \Rightarrow$ Label Shift holds.
-6. According to 'Failing Loudly', conduct a `2-Sample Kolmogorov-Smirnov (KS) Test + Bonferroni Correction` on the C-dimension logits, and get the result whether $p(x) \ne q(x) \Rightarrow$ Covariate Shift holds.
+6. According to 'Failing Loudly', conduct a `2-Sample Kolmogorov-Smirnov (KS) Test + Bonferroni Correction` on the Softmaxed C-dimension logits, and get the result whether $p(x) \ne q(x) \Rightarrow$ Covariate Shift holds.
 7. If Label Shift and Covarite Shift hold, then Concept Shift can't hold.
+
+### Method 2 (deprecated)
+
+Domain Classifier
+
+1. Label all the train data with 0 and test data with 1.
+2. Split both train and test data into 2 halves.
+3. Train a classifier (AdaBoostClassifier) on the first half of the data.
+4. Test on the other half of the data, obtain the prediction accuracy `acc`.
+5. Doing Binomial Testing: $H_0: acc = 0.5 \; vs \; H_1: acc \ne 0.5$. Under the null hypothesis, $acc \sim \text {Bin}(N_{held-out, 0.5})$. 
+
+```python
+from scipy.stats import binomtest
+
+# Example data
+x = 55  # Number of successes
+N = 100  # Total number of trials
+p_value = binom_test(x, n=N, p=0.5, alternative='two-sided')
+
+# Make a decision based on the p-value
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis")
+else:
+    print("Fail to reject the null hypothesis")
+```
+

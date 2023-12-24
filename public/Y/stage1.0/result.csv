@@ -1,0 +1,6 @@
+,Dataset,Label Shift p-value,Label Shift,Covariate Shift p-value,Covariate Shift
+0,Cancer,1.0,False,1.3844e-320,True
+1,FACS_CD8,0.12587412587412586,False,8.277560630884025e-261,True
+2,PBMC_Batch,0.98010878010878,False,0.0,True
+3,PBMC_COVID,0.9627039627039629,False,0.0,True
+4,cSCC,0.98010878010878,False,0.0,True

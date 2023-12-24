@@ -1,5 +1,9 @@
-### Useless Local Files
+### Private Local Files
 Data/
+Datasets/
+Private/
+private/
+*.bin
 
 
 ### VisualStudioCode template

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Results</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-dark">
+        <h1 id="results">Results</h1>
+<h2 id="datasets-description">Datasets Description</h2>
+<h3 id="labels">Labels</h3>
+<p>Cancer:</p>
+<ul>
+<li>('Immune', 'Epithelial', 'Stromal')</li>
+</ul>
+<p>FACS_CD8:</p>
+<ul>
+<li>('B cells', 'CD4 T cells', 'CD14+ Monocytes', 'CD56 NK cells', 'Cytotoxic T cells', 'Memory T cells', 'Naive
+Cytotoxic T cells', 'Naive T cells', 'Regulatory T cells')</li>
+</ul>
+<p>PBMC_Batch:</p>
+<ul>
+<li>('NK cells', 'B cells', 'CD4 T cells', 'CD8 T cells', 'CD14+ Monocytes', 'Dendritic cells', 'FCGR3A+
+Monocytes', 'Megakaryocytes')</li>
+</ul>
+<p>PBMC_COVID:</p>
+<ul>
+<li>('Monocytes', 'Dendritic cells', 'B cells', 'NK cells', 'Plasma', 'CD8 T cells', 'CD4 T cells')</li>
+</ul>
+<p>cSCC:</p>
+<ul>
+<li>('Epithelial', 'Fibroblast', 'Endothelial Cell', 'Melanocyte', 'Myeloid cells', 'Tcell', 'B Cell', 'NK')</li>
+</ul>
+<h2 id="shift-detection">Shift Detection</h2>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Label Shift p-value</th>
+<th>Label Shift</th>
+<th>Covariate Shift p-value</th>
+<th>Covariate</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cancer</td>
+<td>1.000</td>
+<td>False</td>
+<td>0.000</td>
+<td>True</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FACS_CD8</td>
+<td>0.1259</td>
+<td>True</td>
+<td>0.000</td>
+<td>True</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PBMC_Batch</td>
+<td>0.9801</td>
+<td>False</td>
+<td>0.000</td>
+<td>True</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PBMC_COVID</td>
+<td>0.9627</td>
+<td>False</td>
+<td>0.000</td>
+<td>True</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cSCC</td>
+<td>0.9801</td>
+<td>False</td>
+<td>0.000</td>
+<td>True</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="label-shift">Label Shift</h3>
+<ul>
+<li>The predictions by the trained BBSD on train and test data:</li>
+</ul>
+<img src="../media/Cancer_proportion.png">
+<img src="../media/FACS_CD8_proportion.png">
+<img src="../media/PBMC_Batch_proportion.png">
+<img src="../media/PBMC_COVID_proportion.png">
+<img src="../media/cSCC_proportion.png">
+<h3 id="covariate-shift">Covariate Shift</h3>
+<ul>
+<li>Using the logits output by the trained BBSD to represent the distributions of the features in train and test data:</li>
+</ul>
+<img src="../media/Cancer_distribution.png">
+<img src="../media/FACS_CD8_distribution.png">
+<img src="../media/PBMC_Batch_distribution.png">
+<img src="../media/PBMC_COVID_distribution.png">
+<img src="../media/cSCC_distribution.png">
+<h3 id="conclusion">Conclusion</h3>
+<ul>
+<li>
+<p>From the table and the plots, Label Shift holds in the <code>FACS_CD8</code>, while Covariate Shift holds in every data set.</p>
+</li>
+<li>
+<p>The p-values of the Binomial test from the domain classifiers are all zeros, indicating the existence of domain shift.</p>
+</li>
+</ul>
+
+        
+        
+    </body>
+    </html>

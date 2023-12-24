@@ -43,8 +43,7 @@ Welcome to the Optimization Theory project. Here are your tasks based on your re
 
 1. Fill the `Shift Detection` under the `Methods` part in our paper, explain the model and metric we use to detect
    shift, refer to `stage1.0.md`.
-2. Refer to the papers for more information ('Detecting and Correcting for Label Shift with Black Box Predictors' for
-   label shift, 'Failing Loudly- An Empirical Study of Methods for Detecting Dataset Shift' for covariate shift).
+2. Refer to the papers for more information ('Detecting and Correcting for Label Shift with Black Box Predictors' for label shift, 'Failing Loudly- An Empirical Study of Methods for Detecting Dataset Shift' for covariate shift).
 3. Analyze the results of detection. (After 2023-12-24, please check the `results.md` under the `docs` folder for the
    result.)
 
@@ -56,12 +55,13 @@ Welcome to the Optimization Theory project. Here are your tasks based on your re
 
 ### Tasks
 
-1. Shift detection and store the results.
-2. Plan for stage 1.1.
+1. Explore the 3 techniques to conduct domain adaptation.
+2. Find a way to visualize the architecture of the model.
+3. Plan for stage 1.1.
 
 ### Deadline
 
-2023-12-24
+2023-12-27
 
 ## D
 

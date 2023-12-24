@@ -2,10 +2,12 @@
 
 ## Shift Detection
 
-## Data Augmentation
+1. BBSD
+2. 2-Sample KS + Bonferroni Test (from "Failing Loudly")
+3. Domain Classification
 
-## Deep Learning
+## Domain Adaptation
 
-## Learning from Test Data
+## Training
 
 ## Predict and Evaluate
